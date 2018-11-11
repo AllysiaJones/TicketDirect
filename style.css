@@ -47,29 +47,56 @@ nav {
 
 #container {
     margin: 0 auto;
+    font-family: 'Oswald', sans-serif;
 }
 
 h1 {
     text-align: center;
-    margin-top: 10px;
+    margin: 20px 0;
     font-family: 'Oswald', sans-serif;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    margin: 10px auto;
+    text-align: center;
 }
 
 /* styling for home page and movie page */
 #movie_list {
-    padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    width: 80%;
+    margin: 20px auto;
     justify-content: center;
 }
 
-.movie img{
+.movie {
+    text-decoration: none;
+    text-align: center;
     width: 150px;
-    height: 220px;
-    border: solid #1F2328 3px;
-    margin: 15px 10px;
+    margin: 10px;
+    color: #1F2328;
+    font-size: 18px;
 }
 
+.movie img{
+    height: 220px;
+    width: 150px;
+    border: solid #1F2328 3px;
+}
+
+.movie span {
+    display: block;
+}
 /* styling for theater page */
 #theater_options {
     text-align: center;
@@ -140,7 +167,6 @@ h1 {
 
     #container {
         width: 80%;
-        font-family: 'Oswald', sans-serif;
     }
 }
 
@@ -205,4 +231,8 @@ h1 {
     #container {
         width: 100%;
     }   
+
+    #movie_list {
+        width: 90%;
+    }
 }
