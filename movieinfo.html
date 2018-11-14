@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ticket Direct</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="icon" href="ticket.ico">
+</head>
+
+<body>
+    <!-- navigation bar throughout the entire program -->
+    <nav>
+        <ul id="company">
+            <li><i class="fas fa-ticket-alt"></i></li>
+            <li><a href="./index.html" id="company_name">Ticket Direct</a></li>
+        </ul>
+        <label for="toggle"><i class="fas fa-bars" id="hamburger_menu"></i></label>
+        <input type="checkbox" id="toggle">
+        <ul id="menu">
+            <li><a href="./index.html" class="nav_links">Home</a></li>
+            <li><a href="./movies.html" class="nav_links">Movies</a></li>
+            <li><a href="./theaters.html" class="nav_links">Theater</a></li>
+            <li><a href="./presale.html" class="nav_links">Pre-Sale</a></li>
+            <li><a href="./signin.html" class="nav_links">Sign In</a></li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <!-- movie title -->
+        <h1 id="movie_name">Avatar (2009)</h1>
+        <hr id="movie_page_header">
+        <div id="movie_info">
+            <img id="movie_poster" src="MoviePoster/avatar.jpg">
+            <span>
+                <p id="rating_time">PG-13, <span>2 hrs 42 mins</span></p>
+                <p id="genre">Action, Adventure, Fantasy</p>
+                <p id="description">A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn
+                    between following his orders and protecting the world he feels is his home.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5PSNL1qE6VY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </span>
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
