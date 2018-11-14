@@ -97,6 +97,39 @@ h2 {
 .movie span {
     display: block;
 }
+
+.movie:hover {
+    text-decoration: underline;
+    transition-duration: 1000ms;
+}
+
+/* styling for movieinfo page */
+#movie_info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+#movie_info #description{
+    width: 560px;
+    margin: 20px 0;
+    font-size: 19px;
+}
+
+#movie_page_header {
+    margin-bottom: 20px;
+}
+
+#movie_poster {
+    height: 500px;
+    width: auto;
+    margin-right: 20px;
+}
+
+
 /* styling for theater page */
 #theater_options {
     text-align: center;
