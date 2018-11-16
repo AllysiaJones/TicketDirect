@@ -33,24 +33,37 @@
         </ul>
     </nav>
 
-    <div id="container">
+
+    <div id="container"> 
         <!-- movie title -->
-        <h1 id="movie_name">Avatar (2009)</h1>
+        <h1><span id="movie_name"></span> (<span id="movie_year"></span>)</h1>
         <hr id="movie_page_header">
         <div id="movie_info">
-            <img id="movie_poster" src="MoviePoster/avatar.jpg">
+            <img id="movie_poster" src="">
             <span>
-                <p id="rating_time">PG-13, <span>2 hrs 42 mins</span></p>
-                <p id="genre">Action, Adventure, Fantasy</p>
-                <p id="description">A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn
-                    between following his orders and protecting the world he feels is his home.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/5PSNL1qE6VY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                <p><span id="movie_rating"></span>, <span id="movie_duration"></span></p>
+                <p id="movie_genre"></p>
+                <p id="movie_description"></p>
+                <iframe id="movie_trailer" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </span>
         </div>
-    </div>
-    <script src="main.js"></script>
 
+        <!-- <h1>Select a Theater</h1>
+            <div id="theater_options">
+                <input type="text" placeholder="Enter ZIP Code">
+                <select name="theaters" id="theater">
+                    <option value="" selected disabled hidden>Theater Choices</option>
+                    <option value="theaterA">Theater A</option>
+                    <option value="theaterB">Theater B</option>
+                    <option value="theaterC">Theater C</option>
+                    <option value="theaterD">Theater D</option>
+                </select>
+            </div> -->
+        
+        
+    </div>
+    <script src="movie.js"></script>
 </body>
 
 </html>
