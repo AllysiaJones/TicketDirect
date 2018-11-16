@@ -124,7 +124,7 @@ h2 {
 }
 
 #movie_poster {
-    height: 500px;
+    height: 499px;
     width: auto;
     margin-right: 20px;
 }
@@ -135,8 +135,44 @@ h2 {
     text-align: center;
 }
 
-/* styling for sign-in page */
-#sign_in_form, #sign_in_form form{
+/* styling for sign-in form and page */
+.blur {
+    filter: blur(3px);
+}
+#sign_in_form {
+    border: 3px solid #1F2328;
+    background: rgb(167, 167, 167);
+    width: 280px;
+    height: 300px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -140px;
+    margin-left: -150px; 
+}
+#sign_in_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#sign_in_header h2 {
+    margin:0;
+    text-align: center;
+}
+
+#exit {
+    /* display: inline; */
+    margin-top: -14px;
+    color: #1F2328;
+    font-size: 35px;
+    
+}
+
+#sign_in_form form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,6 +192,16 @@ h2 {
     padding: 0 10px;
     background-color: #f9c72f;
 }
+
+#sign_in_form .link {
+    text-decoration: none;
+    color:rgb(60, 60, 253);
+}
+
+#sign_in_form .link:hover {
+    text-decoration: underline;
+}
+
 
 /* destkop view */
 @media only screen and (min-width: 1130px){
