@@ -66,7 +66,7 @@ hr {
 }
 
 h2 {
-    margin: 10px auto;
+    margin: 10px auto 5px auto;
     text-align: center;
 }
 
@@ -135,7 +135,14 @@ h2 {
 
 /* styling for theater page/dropdown */
 #theater_options {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 200px auto;
+    width: 250px;
+}
+
+#theater_options input {
+    margin-bottom: 20px;
 }
 
 /* styling for sign-in form and page */
@@ -204,6 +211,27 @@ h2 {
     text-decoration: underline;
 }
 
+/* styling for seat.html */
+#seat_arrangement {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+.seat {
+    background-color: #f9c72f;
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    margin: 10px;
+}
+
+a .seat:hover, a .seat:checked {
+    background-color: #1F2328;
+}
 
 /* destkop view */
 @media only screen and (min-width: 1130px){
