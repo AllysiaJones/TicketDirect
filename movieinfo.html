@@ -27,14 +27,14 @@
         <ul id="menu">
             <li><a href="./index.html" class="nav_links">Home</a></li>
             <li><a href="./movies.html" class="nav_links">Movies</a></li>
-            <li><a href="./theaters.html" class="nav_links">Theater</a></li>
-            <li><a href="./presale.html" class="nav_links">Pre-Sale</a></li>
+            <li><a href="./theaters.html" class="nav_links">Theaters</a></li>
             <li><a href="./signin.html" class="nav_links">Sign In</a></li>
+            <li><a href="./signup.html" class="nav_links">Sign Up</a></li>
         </ul>
     </nav>
 
 
-    <div id="container"> 
+    <div id="container">
         <!-- movie title -->
         <h1><span id="movie_name"></span><span id="movie_year"></span></h1>
         <hr id="movie_page_header">
@@ -49,19 +49,20 @@
             </span>
         </div>
 
-        <!-- <h1>Select a Theater</h1>
-            <div id="theater_options">
-                <input type="text" placeholder="Enter ZIP Code">
-                <select name="theaters" id="theater">
-                    <option value="" selected disabled hidden>Theater Choices</option>
-                    <option value="theaterA">Theater A</option>
-                    <option value="theaterB">Theater B</option>
-                    <option value="theaterC">Theater C</option>
-                    <option value="theaterD">Theater D</option>
-                </select>
-            </div> -->
-        
-        
+
+        <div id="theater_options">
+                <h1>Select a Theater</h1>
+            <input type="text" placeholder="Enter ZIP Code">
+            <select name="theaters" id="theaters">
+                <option value="" selected disabled hidden>Theaters</option>
+                <option value="theaterA">Theater A</option>
+                <option value="theaterB">Theater B</option>
+                <option value="theaterC">Theater C</option>
+                <option value="theaterD">Theater D</option>
+            </select>
+        </div>
+
+    
     </div>
     <script src="movie.js"></script>
 </body>
