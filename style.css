@@ -146,14 +146,15 @@ h2 {
 }
 
 /* styling for sign-in form and page */
-/* .blur {
+.blur {
     filter: blur(3px);
-} */
-#sign_in_form {
+}
+
+#sign_in_form, #sign_up_form {
     border: 3px solid #1F2328;
     background: rgb(167, 167, 167);
     width: 280px;
-    height: 300px;
+    height: auto;
     padding-bottom: 10px;
     margin: 0 auto;
     font-family: 'Oswald', sans-serif;
@@ -166,33 +167,41 @@ h2 {
 }
 #sign_in_header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 #sign_in_header h2 {
-    margin: 5px 0;
-    padding-left: 40%;
+   margin: -10px 0 0 0;
+    /* padding-left: 15%; */
 }
 
 #exit {
     /* display: inline; */
-    margin-top: -14px;
+    margin-top: -2px;
+    margin-left: 88%;
     color: #1F2328;
     font-size: 35px;
+    cursor: pointer;
 }
 
-#sign_in_form form {
+#sign_in_form form, #sign_up_form form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#form_email, #form_password {
-    width: 150px;
+
+
+#form_email, #form_password, #form_confirm_password {
+    width: 180px;
     margin-top: 10px;
     font-size: 20px;
     padding: 10px 5px;
 }
+
+/* #sign_up_form #form_email, #sign_up_form #form_password, #sign_up_form #form_confirm_password {
+    font-size: 15px;
+} */
 
 #form_button {
     font-family: 'Oswald', sans-serif;
@@ -200,6 +209,7 @@ h2 {
     margin: 10px 0;
     padding: 0 10px;
     background-color: #f9c72f;
+    cursor: pointer;
 }
 
 #sign_in_form .link {
@@ -209,6 +219,33 @@ h2 {
 
 #sign_in_form .link:hover {
     text-decoration: underline;
+}
+#password_info {
+    position: relative;
+
+}
+
+#password_option {
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 60px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#password_option1 {
+    position: absolute;
+    margin-left: 158px;
+    margin-top: -36px;
+    cursor: pointer;
+}
+
+#password_option2 {
+    position: absolute;
+    margin-left: 60px;
+    margin-top: -36px;
+    cursor: pointer;
 }
 
 /* styling for seat.html */
@@ -227,10 +264,6 @@ h2 {
     width: 35px;
     height: 35px;
     margin: 10px;
-}
-
-a .seat:hover, a .seat:checked {
-    background-color: #1F2328;
 }
 
 /* destkop view */
