@@ -28,24 +28,30 @@
             <li><a href="./index.html" class="nav_links">Home</a></li>
             <li><a href="./movies.html" class="nav_links">Movies</a></li>
             <li><a href="./theaters.html" class="nav_links">Theater</a></li>
-            <li><a href="./presale.html" class="nav_links">Pre-Sale</a></li>
             <li><a href="./signin.html" class="nav_links" id="selected_page">Sign In</a></li>
+            <li><a href="./signup.html" class="nav_links">Sign Up</a></li>
         </ul>
     </nav>
 
     <div id="container">
         <h1>Sign In</h1>
-
+        <hr>
         <div id="sign_in_form">
+            <h2>Ticket Direct Rewards</h2>
             <form action="">
                 <input type="email" placeholder="Email" id="form_email" name="email" required>
-                <input type="password" placeholder="Password" id="form_password" name="password" required>
-                <button id="form_button">Submit</button>
+                <div id="password_info">
+                    <input type="password" placeholder="Password" id="form_password" name="password" required>
+                    <span id="password_option" onclick="showPassword()">Show</span>
+                </div>
+                <button id="form_button" onclick="confirmAccount()">Sign In</button>
             </form>
-            <!-- <p>Don't remember your password? <a href="">Click Here</a></p> -->
-            <p>Don't have an account? <a href="" id="sign_up_link">Sign Up Here</a></p>
+            <a href="" class="link">Forgot your password?</a>
+            <p>Don't have an account? <a href="./signup.html" class="link">Sign Up Here</a></p>
+            <a href="" class="link">Continue as a Guest</a>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 
 </html>
