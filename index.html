@@ -27,131 +27,135 @@
         <ul id="menu">
             <li><a href="./index.html" class="nav_links" id="selected_page">Home</a></li>
             <li><a href="./movies.html" class="nav_links">Movies</a></li>
-            <li><a href="./theaters.html" class="nav_links">Theater</a></li>
-            <li><a href="./presale.html" class="nav_links">Pre-Sale</a></li>
-            <li><a href="./signin.html" class="nav_links">Sign In</a></li>
+            <li><a href="./theaters.html" class="nav_links">Theaters</a></li>
+            <li><a href="./signin.html" class="nav_links" onclick="signOut()">Sign In</a></li>
+            <li><a href="./signup.html" class="nav_links">Sign Up</a></li>
+
         </ul>
     </nav>
 
     <div id="container" class="blur">
         <h1>Welcome to Ticket Direct!</h1>
-        <hr>
         <!-- movies currently in theaters -->
         <h2>Now Playing</h2>
+        <hr>
         <div id="movie_list">
-            <a href="./movieinfo.html" class="movie" id="avatar"><img src="MoviePoster/avatar.jpg">
+            <a href="./movieinfo.html" class="movie" id="avatar" onclick="movieChoice('Avatar')"><img src="MoviePoster/avatar.jpg">
                 <p>Avatar (2009)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="titanic"><img src="MoviePoster/titanic.jpg">
+            <a href="./movieinfo.html" class="movie" id="titanic" onclick="movieChoice('Titanic')"><img src="MoviePoster/titanic.jpg">
                 <p>Titanic (1997)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="starWars"><img src="MoviePoster/star-wars.jpg">
+            <a href="./movieinfo.html" class="movie" id="starWars" onclick="movieChoice('Star Wars: The Force Awakens')"><img src="MoviePoster/star-wars.jpg">
                 <p>Star Wars: The Force Awakens (2015)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="avengers"><img src="MoviePoster/avengers.jpg">
+            <a href="./movieinfo.html" class="movie" id="avengers" onclick="movieChoice('Avengers: Infinity War')"><img src="MoviePoster/avengers.jpg">
                 <p>Avengers: Infinity War (2018)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="jurassic"><img src="MoviePoster/jurassic_world.jpg">
+            <a href="./movieinfo.html" class="movie" id="jurassic" onclick="movieChoice('Jurassic World')"><img src="MoviePoster/jurassic_world.jpg">
                 <p>Jurassic World (2015)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="furious"><img src="MoviePoster/furious7.jpg">
+            <a href="./movieinfo.html" class="movie" id="furious" onclick="movieChoice('Furious 7')"><img src="MoviePoster/furious7.jpg">
                 <p>Furious 7 (2015)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="blackpanther"><img src="MoviePoster/black_panther.jpg">
+            <a href="./movieinfo.html" class="movie" id="blackpanther" onclick="movieChoice('Black Panther')"><img src="MoviePoster/black_panther.jpg">
                 <p>Black Panther (2018)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="harrypotter"><img src="MoviePoster/harry_potter.jpg">
+            <a href="./movieinfo.html" class="movie" id="harrypotter" onclick="movieChoice('Harry Potter and the Deathly Hallows: Part 2')"><img src="MoviePoster/harry_potter.jpg">
                 <p>Harry Potter and the Deathly Hallows: Part 2 (2011)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="frozen"><img src="MoviePoster/frozen.jpg">
+            <a href="./movieinfo.html" class="movie" id="frozen" onclick="movieChoice('Frozen')"><img src="MoviePoster/frozen.jpg">
                 <p>Frozen (2013)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="beauty"><img src="MoviePoster/beauty&beast.jpg">
+            <a href="./movieinfo.html" class="movie" id="beauty" onclick="movieChoice('Beauty and the Beast')"><img src="MoviePoster/beauty&beast.jpg">
                 <p>Beauty and the Beast (2017)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="incredibles"><img src="MoviePoster/incredibles2.jpg">
+            <a href="./movieinfo.html" class="movie" id="incredibles" onclick="movieChoice('Incredibles 2')"><img src="MoviePoster/incredibles2.jpg">
                 <p>Incredibles 2 (2018)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="minions"><img src="MoviePoster/minions.jpg">
+            <a href="./movieinfo.html" class="movie" id="minions" onclick="movieChoice('Minions')"><img src="MoviePoster/minions.jpg">
                 <p>Minions (2015)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="transformers"><img src="MoviePoster/transformers.jpg">
+            <a href="./movieinfo.html" class="movie" id="transformers" onclick="movieChoice('Transformers: Dark of the Moon')"><img src="MoviePoster/transformers.jpg">
                 <p>Transformers: Dark of the Moon (2011)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="skyfall"><img src="MoviePoster/skyfall.jpg">
+            <a href="./movieinfo.html" class="movie" id="skyfall" onclick="movieChoice('Skyfall')"><img src="MoviePoster/skyfall.jpg">
                 <p>Skyfall (2012)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="darkknight"><img src="MoviePoster/dark_knight.jpg">
+            <a href="./movieinfo.html" class="movie" id="darkknight" onclick="movieChoice('The Dark Knight Rises')"><img src="MoviePoster/dark_knight.jpg">
                 <p>The Dark Knight Rises (2012)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="toystory3"><img src="MoviePoster/toy_story_3.jpg">
+            <a href="./movieinfo.html" class="movie" id="toystory3" onclick="movieChoice('Toy Story 3')"><img src="MoviePoster/toy_story_3.jpg">
                 <p>Toy Story 3 (2010)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="pirates"><img src="MoviePoster/pirates.jpg">
+            <a href="./movieinfo.html" class="movie" id="pirates" onclick="movieChoice('Pirates of the Caribbean: Dead Man\'s Chest')"><img src="MoviePoster/pirates.jpg">
                 <p>Pirates of the Caribbean: Dead Man's Chest (2006)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="despicableme"><img src="MoviePoster/despicable_me3.jpg">
+            <a href="./movieinfo.html" class="movie" id="despicableme" onclick="movieChoice('Despicable Me 3')"><img src="MoviePoster/despicable_me3.jpg">
                 <p>Despicable Me 3 (2017)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="findingdory"><img src="MoviePoster/finding_dory.jpg">
+            <a href="./movieinfo.html" class="movie" id="findingdory" onclick="movieChoice('Finding Dory')"><img src="MoviePoster/finding_dory.jpg">
                 <p>Finding Dory (2016)</p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="alice"><img src="MoviePoster/alice.jpg">
+            <a href="./movieinfo.html" class="movie" id="alice" onclick="movieChoice('Alice in Wonderland')"><img src="MoviePoster/alice.jpg">
                 <p>Alice in Wonderland (2010)</p>
             </a>
         </div>
-        <hr>
+
         <!-- movies for pre-sale -->
         <h2>Coming to Theaters</h2>
+        <hr>
         <div id="movie_list">
-            <a href="./movieinfo.html" class="movie" id="lego"><img src="MoviePoster/lego_movie.jpg">
+            <a href="./movieinfo.html" class="movie" id="lego" onclick="movieChoice('The Lego Movie 2: The Second Part')"><img src="MoviePoster/lego_movie.jpg">
                 <p>The Lego Movie 2: The Second Part<span>(02-08-2019)</span></p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="trainyourdragon"><img src="MoviePoster/train_your_dragon.jpg">
+            <a href="./movieinfo.html" class="movie" id="trainyourdragon" onclick="movieChoice('How to Train Your Dragon: The Hidden World')"><img src="MoviePoster/train_your_dragon.jpg">
                 <p>How to Train Your Dragon: The Hidden World<span>(02-22-2019)</span></p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="dumbo"><img src="MoviePoster/dumbo.jpg">
+            <a href="./movieinfo.html" class="movie" id="dumbo" onclick="movieChoice('Dumbo')"><img src="MoviePoster/dumbo.jpg">
                 <p>Dumbo<span>(03-29-2019)</span></p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="aladdin"><img src="MoviePoster/aladdin.jpg">
-                <p>Aladdin<span>(05-24-2019)</span></p>
-            </a>
-            <a href="./movieinfo.html" class="movie" id="godzilla"><img src="MoviePoster/godzilla.jpg">
-                <p>Godzilla: King of the Monsters<span>(05-31-2019)</span></p>
-            </a>
-            <a href="./movieinfo.html" class="movie" id="darkphoenix"><img src="MoviePoster/dark_phoenix.jpg">
-                <p>Dark Phoenix<span>(06-07-2019)</span></p>
-            </a>
-            <a href="./movieinfo.html" class="movie" id="toystory4"><img src="MoviePoster/toy_story_4.jpg">
-                <p>Toy Story 4<span>(06-21-2019)</span></p>
-            </a>
-            <a href="./movieinfo.html" class="movie" id="spiderman"><img src="MoviePoster/spider-man.png">
+            <a href="./movieinfo.html" class="movie" id="spiderman" onclick="movieChoice('Spider-Man: Far From Home')"><img src="MoviePoster/spider-man.png">
                 <p>Spider-Man: Far From Home<span>(04-05-2019)</span></p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="it"><img src="MoviePoster/it.jpg">
+            <a href="./movieinfo.html" class="movie" id="aladdin" onclick="movieChoice('Aladdin')"><img src="MoviePoster/aladdin.jpg">
+                <p>Aladdin<span>(05-24-2019)</span></p>
+            </a>
+            <a href="./movieinfo.html" class="movie" id="godzilla" onclick="movieChoice('Godzilla: King of the Monsters')"><img src="MoviePoster/godzilla.jpg">
+                <p>Godzilla: King of the Monsters<span>(05-31-2019)</span></p>
+            </a>
+            <a href="./movieinfo.html" class="movie" id="darkphoenix" onclick="movieChoice('Dark Phoenix')"><img src="MoviePoster/dark_phoenix.jpg">
+                <p>Dark Phoenix<span>(06-07-2019)</span></p>
+            </a>
+            <a href="./movieinfo.html" class="movie" id="toystory4" onclick="movieChoice('Toy Story 4')"><img src="MoviePoster/toy_story_4.jpg">
+                <p>Toy Story 4<span>(06-21-2019)</span></p>
+            </a>
+            <a href="./movieinfo.html" class="movie" id="it" onclick="movieChoice('It: Chapter Two')"><img src="MoviePoster/it.jpg">
                 <p>It: Chapter Two<span>(09-06-2019)</span></p>
             </a>
-            <a href="./movieinfo.html" class="movie" id="starwars9"><img src="MoviePoster/star_wars9.png">
+            <a href="./movieinfo.html" class="movie" id="starwars9" onclick="movieChoice('Star Wars: Episode IX')"><img src="MoviePoster/star_wars9.png">
                 <p>Star Wars: Episode IX<span>(12-20-2019)</span></p>
             </a>
         </div>
     </div>
 
-    <!-- <div id="sign_in_form">
+    <div id="sign_in_form">
         <div id="sign_in_header">
-            <h2>Sign In</h2>
-            <a href="" id="exit"><i class="fas fa-window-close" href="#"></i></a>
+            <i class="fas fa-window-close" id="exit" href="#" onclick="removeForm()"></i>
+            <h2>Ticket Direct Rewards</h2>
         </div>
         <form action="">
             <input type="email" placeholder="Email" id="form_email" name="email" required>
-            <input type="password" placeholder="Password" id="form_password" name="password" required>
-            <button id="form_button">Submit</button>
+            <div id="password_info">
+                <input type="password" placeholder="Password" id="form_password" name="password" required>
+                <span id="password_option" onclick="showPassword()">Show</span>
+            </div>
+            <button id="form_button" onclick="confirmAccount()">Sign In</button>
         </form>
         <a href="" class="link">Forgot your password?</a>
-        <p>Don't have an account? <a href="" class="link">Sign Up Here</a></p>
-        <a href="" class="link">Continue as a guest</a>
-    </div> -->
-
+        <p>Don't have an account? <a href="./signup.html" class="link">Sign Up Here</a></p>
+        <a href="" class="link">Continue as a Guest</a>
+    </div>
     <script src="main.js"></script>
 </body>
 
