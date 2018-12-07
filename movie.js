@@ -142,3 +142,13 @@ for (let i = 0; i < movieList.length; i++) {
         break;
     }
 }
+
+function getPoster() {
+    let movieSelection = document.getElementById("movie_selection");
+    for (let i = 0; i < movieList.length; i++) {
+        if (selected == movieList[i].name) {
+            movieSelection.setAttribute("src", movieList[i].poster);
+        }
+    }
+}
+
