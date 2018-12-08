@@ -263,7 +263,7 @@ h2 {
     filter: blur(3px);
 }
 
-#sign_in_form, #sign_up_form {
+.account_form {
     border: 3px solid #1F2328;
     background: rgb(167, 167, 167);
     width: 280px;
@@ -278,17 +278,27 @@ h2 {
     margin-top: -140px;
     margin-left: -150px; 
 }
-#sign_in_header {
+
+#forgot_password_form {
+    display: none;
+}
+
+.form_message {
+    display: block;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.form_header {
     display: flex;
     flex-direction: column;
 }
 
-#sign_in_header h2 {
+.form_header h2 {
    margin: -10px 0 0 0;
     /* padding-left: 15%; */
 }
 
-#exit {
+.exit {
     /* display: inline; */
     margin-top: -2px;
     margin-left: 88%;
@@ -297,15 +307,13 @@ h2 {
     cursor: pointer;
 }
 
-#sign_in_form form, #sign_up_form form {
+.account_form form, .account_form form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
-
-#form_email, #form_password, #form_confirm_password {
+.form_email, .form_password {
     width: 180px;
     margin-top: 10px;
     font-size: 20px;
@@ -316,7 +324,7 @@ h2 {
     font-size: 15px;
 } */
 
-#form_button {
+.form_button {
     font-family: 'Oswald', sans-serif;
     font-size: 25px;
     margin: 10px 0;
@@ -325,39 +333,29 @@ h2 {
     cursor: pointer;
 }
 
-#sign_in_form .link {
+#forgot_password_button:disabled {
+    cursor: initial;
+}
+
+.account_form .link {
     text-decoration: none;
     color:rgb(60, 60, 253);
 }
 
-#sign_in_form .link:hover {
+.account_form .link:hover {
     text-decoration: underline;
 }
-#password_info {
+.password_info {
     position: relative;
 
 }
 
-#password_option {
+.password_option {
     position: absolute;
     margin-top: -35px;
     margin-left: 60px;
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
-    cursor: pointer;
-}
-
-#password_option1 {
-    position: absolute;
-    margin-left: 158px;
-    margin-top: -36px;
-    cursor: pointer;
-}
-
-#password_option2 {
-    position: absolute;
-    margin-left: 60px;
-    margin-top: -36px;
     cursor: pointer;
 }
 
