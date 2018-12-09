@@ -421,12 +421,17 @@ h2 {
 }
 
 #user_selection {
-    padding-left: 10px;
     width: 300px;
     border: solid #1F2328 3px;
 }
 
+#user_selection h2 {
+    border-bottom: #1F2328 solid 2px;
+    padding-bottom: 10px;
+}
+
 #user_selection p{
+    padding-left: 10px;
     font-size: 18px;
 }
 /* styling for seat.html */
@@ -439,12 +444,26 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
 .seat {
     background-color: #f9c72f;
     background-size: cover;
     width: 35px;
     height: 35px;
     margin: 10px;
+    border: none;
+}
+
+.seat:hover, .seat:focus{
+    background: #333;
+    color: #ccc;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+.seat:hover {
+    background: #333 !important;
 }
 
 #theater_format {
@@ -453,16 +472,20 @@ h2 {
     align-items: center;
     margin: 30px auto;
 }
+
 #theater_seats {
     margin-right: 15px;
 }
+
 #theater_seats p{
     text-align: center;
     font-size: 20px;
 }
+
 #front_theater {
     margin-top: 0px;
 }
+
 #checkout_button {
     width: 180px;
     text-align: center;
