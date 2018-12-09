@@ -32,8 +32,41 @@
         </ul>
     </nav>
     <div id="container">
+        <div id="calendar">
+            <a href="" class="times" class="arrows" id="left_arrow"><i class="fas fa-arrow-circle-left"></i></a>
+            <a class="day" onclick="getDate('0')">
+                <p class="weekday"></p>
+                <p class="date"></p>
+            </a>
+            <a class="day" onclick="getDate('1')">
+                <p class="weekday"></p>
+                <p class="date"></p>
+            </a>
+            <a class="day" onclick="getDate('2')">
+                <p class="weekday"></p>
+                <p class="date"></p>
+            </a>
+            <a class="day" onclick="getDate('3')">
+                <p class="weekday"></p>
+                <p class="date"></p>
+            </a>
+            <a class="day" onclick="getDate('4')">
+                <p class="weekday"></p>
+                <p class="date"></p>
+            </a>
+            <a class="day" onclick="getDate('5')">
+                <p class="weekday"></p>
+                <p class="date"></p>
+            </a>
+            <a class="day" onclick="getDate('6')">
+                <p class="weekday"></p>
+                <p class="date"></p>
+            </a>
+            <a href="" class="times" class="arrows" onclick="getNextWeek()"><i class="fas fa-arrow-circle-right"></i></a>
+        </div>
         <h1>Select a Theater</h1>
         <div id="theater_options">
+            <input type="text" placeholder="Enter ZIP Code">
             <!-- <div>
                         <input type="text" id="search" placeholder="Search" value="">
                         <input type='submit' onclick="readXML();" />
@@ -42,7 +75,7 @@
                 <input type="text" placeholder="Enter ZIP Code">
                 <input type="submit">
             </div> -->
-            <select name="theaters" id="theater">
+            <select name="theaters" id="theater" onchange="getTheater()">
                 <option value="" selected disabled hidden>Theater Choices</option>
                 <option value="theaterA">Theater A</option>
                 <option value="theaterB">Theater B</option>
@@ -51,18 +84,35 @@
             </select>
         </div>
 
-        <div id="calendar">
-            <a href="" class="day"><span class="weekday"></span><span class="date"></span></a>
-            <a href="" class="day"><span class="weekday"></span><span class="date"></span></a>
-            <a href="" class="day"><span class="weekday"></span><span class="date"></span></a>
-            <a href="" class="day"><span class="weekday"></span><span class="date"></span></a>
-            <a href="" class="day"><span class="weekday"></span><span class="date"></span></a>
-            <a href="" class="day"><span class="weekday"></span><span class="date"></span></a>
-            <a href="" class="day"><span class="weekday"></span><span class="date"></span></a>
+        <div id="movie_display">
+            <div id="movie_format">
+                <img id="movie_selection" src="">
+            </div>
+            <div id="theater_info">
+                <h2 id="theater_name">Theater Name</h2>
+                <div id="theater_times">
+                    <button class="movie_times" onclick="getMovieTime('0')">11:00 am</button>
+                    <button class="movie_times" onclick="getMovieTime('1')">12:00 pm</button>
+                    <button class="movie_times" onclick="getMovieTime('2')">2:30 pm</button>
+                    <button class="movie_times" onclick="getMovieTime('3')">5:00 pm</button>
+                    <button class="movie_times" onclick="getMovieTime('4')">6:00 pm</button>
+                    <button class="movie_times" onclick="getMovieTime('5')">7:30 pm</button>
+                    <button class="movie_times" onclick="getMovieTime('6')">8:00 pm</button>
+                    <button class="movie_times" onclick="getMovieTime('7')">9:00 pm</button>
+                    <button class="movie_times" onclick="getMovieTime('8')">11:00 pm</button>
+                    <button class="movie_times" onclick="getMovieTime('9')">11:30 pm</button>
+                </div>
+                <a class="next_button" href="./ticket.html">Continue to Ticket Selection &raquo;</a>
+            </div>
+
         </div>
     </div>
     <!-- <script type="text/javascript" src="xmlFunctions.js"></script> -->
     <script src="theater.js"></script>
+    <script src="movie.js"></script>
+    <script>
+        getPoster("movie_selection");    
+    </script>
 </body>
 
 </html>
