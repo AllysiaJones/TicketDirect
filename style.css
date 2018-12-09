@@ -187,17 +187,19 @@ h2 {
     margin: 0 auto 50px auto;
 }
 
-#selected_movie {
+#movie_format {
     height: 300px;
 }
 #movie_selection {
-    height: 100%;
+    height: 98%;
     width: auto;
+    border: #1F2328 solid 3px;
+    border-right: none;
 }
 
 #theater_info {
     border: #1F2328 solid 3px;
-    height: 294px;
+    height: auto;
     width: 500px;
     background: #ccc;
     display: flex;
@@ -224,9 +226,10 @@ h2 {
 }
 
 
-#movie_times {
+.movie_times {
     padding: 8px;
     margin: 5px;
+    width: 110px;
     font-size: 20px;
     background: #f9c72f;
     color: #1F2328;
@@ -234,7 +237,7 @@ h2 {
     border: #f7bb08 solid 2px;
 }
 
-#movie_times:hover, #movie_times:focus {
+.movie_times:hover, .movie_times:focus {
     cursor: pointer;
     background: #ffd24c;
     border-color: #f9c72f;
@@ -360,6 +363,12 @@ h2 {
 }
 
 /* styling for ticket.html */
+#ticket_format {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+}
+
 .type_selection {
     display: flex;
     margin: 10px 0;
@@ -369,6 +378,10 @@ h2 {
 .type {
     width: 70px;
     text-align: right;
+}
+
+#ticket_selection {
+    vertical-align: middle;
 }
 
 #ticket_selection p {
@@ -394,6 +407,28 @@ h2 {
     justify-content: center;
 }
 
+#movie_choice_display {
+    display: flex;
+    height: 206px;
+    background: #ccc;
+}
+
+#selected_movie {
+    height: 200px;
+    width: auto;
+    border: solid #1F2328 3px;
+    border-right: none;
+}
+
+#user_selection {
+    padding-left: 10px;
+    width: 300px;
+    border: solid #1F2328 3px;
+}
+
+#user_selection p{
+    font-size: 18px;
+}
 /* styling for seat.html */
 #seat_arrangement {
     display: flex;
@@ -412,6 +447,26 @@ h2 {
     margin: 10px;
 }
 
+#theater_format {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+#theater_seats {
+    margin-right: 15px;
+}
+#theater_seats p{
+    text-align: center;
+    font-size: 20px;
+}
+#front_theater {
+    margin-top: 0px;
+}
+#checkout_button {
+    width: 180px;
+    text-align: center;
+}
 
 /* destkop view */
 @media only screen and (min-width: 1130px){
