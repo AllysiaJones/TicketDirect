@@ -33,73 +33,77 @@
         </ul>
     </nav>
 
-
     <div id="container">
-        <div id="movie_display">
-            <div id="selected_movie">
-                <img id="movie_selection" src="" >
+        <h1>Ticket Selection</h1>
+        <hr>
+        <div id="ticket_format">
+            <div id="ticket_selection">
+                <h2>Ticket Quantity:</h2>
+                <div class="type_selection">
+                    <p class="type">Adult</p>
+                    <select name="adult_ticket" class="ticket_amount" onchange="getTicketAmount('adult')">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <p>X $<span class="price">12</span> = $<span class="subtotal">0.00</span></p>
+                </div>
+                <div class="type_selection">
+                    <p class="type">Child</p>
+                    <select name="child_ticket" class="ticket_amount" onchange="getTicketAmount('child')">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <p>X $<span class="price">12</span> = $<span class="subtotal">0.00</span></p>
+                </div>
+                <div class="type_selection">
+                    <p class="type">Senior</p>
+                    <select name="senior_ticket" class="ticket_amount" onchange="getTicketAmount('senior')">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <p>X $<span class="price">12</span> = $<span class="subtotal">0.00</span></p>
+                </div>
+
             </div>
-            <div id="theater_info">
-                <h2 id="theater_name">Theater Name</h2>
-                <div id="theater_times">
-                    <button id="movie_times">12:00 am</button>
-                    
+            <div id="movie_choice_display">
+                <img id="selected_movie" src="">
+                <div id="user_selection">
+                    <h2>Your Movie Info</h2>
+                    <p id="selected_theater"></p>
+                    <p><span id="selected_date"></span> @ <span id="selected_time"></span></p>
                 </div>
             </div>
         </div>
-        <div id="ticket_selection">
-            <div class="type_selection">
-                <p class="type">Adult</p>
-                <select name="adult_ticket" class="ticket_amount" onchange="getTicketAmount('adult')">
-                    <option value="0" selected>0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-                <p>X $<span class="price">12</span> = $<span class="subtotal">0.00</span></p>
-            </div>
-            <div class="type_selection">
-                <p class="type">Child</p>
-                <select name="child_ticket" class="ticket_amount" onchange="getTicketAmount('child')">
-                    <option value="0" selected>0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-                <p>X $<span class="price">12</span> = $<span class="subtotal">0.00</span></p>
-            </div>
-            <div class="type_selection">
-                <p class="type">Senior</p>
-                <select name="senior_ticket" class="ticket_amount" onchange="getTicketAmount('senior')">
-                    <option value="0" selected>0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-                <p>X $<span class="price">12</span> = $<span class="subtotal">0.00</span></p>
-            </div>
 
-        </div>
-        <div class="buttons">
-            <a class="next_button" href="./theaters.html">&laquo; Back to Theater Selection</a>
-            <a class="next_button" id="seat_button" href="./seat.html" onclick="storeTickets()">Continue to Seat Selection &raquo;</a>
-
-        </div>
+    </div>
+    <div class="buttons">
+        <a class="next_button" href="./theaters.html">&laquo; Back to Theater Selection</a>
+        <a class="next_button" id="seat_button" href="./seat.html" onclick="storeTickets()">Continue to Seat
+            Selection &raquo;</a>
     </div>
     <script src="ticket.js"></script>
     <script src="movie.js"></script>
     <script>
-        getPoster();    
+        getPoster("selected_movie");
+        setPrice();
+        document.getElementById("selected_theater").innerHTML = localStorage.getItem("theater");
+        document.getElementById("selected_time").innerHTML = localStorage.getItem("movieTime");
+        document.getElementById("selected_date").innerHTML = localStorage.getItem("movieDate");
     </script>
 </body>
-
 </html>
