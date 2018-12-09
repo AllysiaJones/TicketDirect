@@ -143,8 +143,8 @@ for (let i = 0; i < movieList.length; i++) {
     }
 }
 
-function getPoster() {
-    let movieSelection = document.getElementById("movie_selection");
+function getPoster(movieId) {
+    let movieSelection = document.getElementById(movieId);
     for (let i = 0; i < movieList.length; i++) {
         if (selected == movieList[i].name) {
             movieSelection.setAttribute("src", movieList[i].poster);
