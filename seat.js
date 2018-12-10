@@ -2,14 +2,14 @@ let seats = [];
 
 function toggleSeat(seatId) {
     let seat = document.getElementById(seatId);
-    if (seat.innerHTML == seatId) {
+    if (seat.innerHTML == trimSeat(seatId)) {
         seat.innerHTML = "";
         seat.style.backgroundColor = "#f9c72f";
         seat.style.color = "#1F2328";
         removeSeat(seatId);
     }
     else {
-        seat.innerHTML = seatId;
+        seat.innerHTML = trimSeat(seatId);
         seat.style.backgroundColor = "#1F2328";
         seat.style.color = "#ccc";
         addSeat(seatId);
@@ -34,7 +34,12 @@ function displaySeats() {
     let selectedSeats = "";
     seats = seats.sort();
     for (let i = 0; i < seats.length; i++) {
-        selectedSeats += seats[i];
+        if(seats[i][1] == 0){
+            selectedSeats += trimSeat(seats[i]);
+        }
+        else {
+            selectedSeats += seats[i];
+        }
         if(seats.length > 1  & i != seats.length-1) {
             selectedSeats += ", ";
         }
@@ -45,6 +50,13 @@ function displaySeats() {
     document.getElementById("selected_seats").innerHTML = selectedSeats;
 }
 
+function trimSeat(seatId) {
+    if(seatId[1] == 0){
+        return seatId[0] + seatId[2];
+    }
+    else    
+        return seatId;
+}
 
 // localStorage.setItem("amountOfTickets", 4);
 
