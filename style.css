@@ -399,7 +399,7 @@ h2 {
 
 .subtotal {
     display: inline-block;
-    width: 70px;
+    width: 52px;
 }
 
 .buttons {
@@ -490,6 +490,96 @@ h2 {
     width: 180px;
     text-align: center;
 }
+
+/* styling for checkout.html */
+#center_display {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#checkout_display {
+    display: flex;
+    justify-content: center;
+}
+
+#purchase_display, #payment_display {
+    display: flex;
+    flex-direction: column;
+    border: #333 solid 2px;
+    background: #ccc;
+    padding: 0 10px;
+}
+
+#payment_display {
+    width: 400px;
+    margin-left: 10px;
+}
+
+.payment_selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.payment_option {
+    display: flex;
+    align-items: center;
+}
+#purchase_display p, #payment_display p {
+    font-size: 20px;
+}
+#purchase_display p {
+    text-align: right;
+}
+
+#subtotal_display, #total_display {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: #1F2328 solid 1px;
+    font-weight: 600;
+}
+
+#total_display {
+    padding-bottom: 5px;
+    font-size: 80px;
+}
+
+#subtotal, #total_fees, #total {
+    display: inline-block;
+    width: 52px;
+}
+
+#card_payment_display {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom: #1F2328 solid 1px;
+}
+
+#card_payment_display input{
+    max-width: 160px;
+}
+
+.card_info_display {
+    display: flex;
+    justify-content: flex-start;
+}
+.card_info_display select {
+    width: 70px;
+}
+
+.users_name {
+    display: flex;
+    flex-direction: column;
+}
+/* .ticket_type {
+    font-weight: 600;
+} */
+/* #purchase_display h2, #payment_display h2 {
+    text-align: left;
+    //fix margin
+} */
 
 /* destkop view */
 @media only screen and (min-width: 1130px){
