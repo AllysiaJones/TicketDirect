@@ -5,14 +5,11 @@ function TicketInfo(type, price, amount, subtotal) {
     this.subtotal = subtotal;
 }
 
-let adultTicket = new TicketInfo("adult", 11.85, 0, 0);
-let childTicket = new TicketInfo("child", 8.55, 0, 0);
-let seniorTicket = new TicketInfo("senior", 8.55, 0, 0);
+let adultTicket = new TicketInfo("adult", 11.85);
+let childTicket = new TicketInfo("child", 8.55);
+let seniorTicket = new TicketInfo("senior", 8.55);
 
 const ticketTypes = [adultTicket, childTicket, seniorTicket];
-
-setPrice();
-getPoster();
 
 function setPrice() {
     let tickets = document.getElementsByClassName("ticket_amount");
@@ -33,6 +30,7 @@ function setSubtotal(ticketType, ticketAmount) {
     for (let i = 0; i < ticketTypes.length; i++) {
         if (ticketType == ticketTypes[i].type) {
             let subtotal = parseInt(ticketAmount) * parseFloat(ticketTypes[i].price);
+            ticketTypes[i].subtotal = (parseFloat(ticketTypes[i].price) * parseInt(ticketTypes[i].amount)).toFixed(2);
             let subtotalText = document.getElementsByClassName("subtotal");
             subtotalText[i].innerHTML = subtotal.toFixed(2);
         }
@@ -59,12 +57,24 @@ function storeTickets() {
         ticketTypes[i].amount = parseInt(ticketAmount);
         tickets[i].selectedIndex = 0;
     }
-    getSubtotal();
+    getSubtotal()
+    getTotalAmount()
+    document.getElementById("seat_button").setAttribute("href", "./seat.html");
 }
 
-function getSubtotal(){
+function getSubtotal() {
+    let subtotal = 0;
     for (let i = 0; i < ticketTypes.length; i++) {
         ticketTypes[i].subtotal = (parseFloat(ticketTypes[i].price) * parseInt(ticketTypes[i].amount)).toFixed(2);
+        subtotal += parseFloat(ticketTypes[i].subtotal);
     }
+    localStorage.setItem("subtotal", subtotal.toFixed(2));
 }
 
+function getTotalAmount() {
+    let total = 0;
+    for (let i = 0; i < ticketTypes.length; i++) {
+        total += ticketTypes[i].amount;
+    }
+    localStorage.setItem("amountOfTickets", total);
+}
