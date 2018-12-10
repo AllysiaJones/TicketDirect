@@ -60,19 +60,20 @@ function trimSeat(seatId) {
 
 // localStorage.setItem("amountOfTickets", 4);
 
-// function checkSeatAmount() {
-//     let amountOfTickets = localStorage.getItem("amountOfTickets");
-//     if(amountOfTickets == seats.length) {
-//         alert("correct amount");
-//         //link if correct
-//     }
-//     else if (amountOfTickets > seats.length) {
-//         document.getElementById("wrong_amount").innerHTML = "Please Choose " + seats.length - amountOfTickets + " more tickets."
-//         alert("Please choose " + (seats.length - amountOfTickets) + " more ticket(s).")
-//     }
-//     else if (amountOfTickets > seats.length) {
-//         alert("Please choose " + (amountOfTickets - seats.length) + " less ticket(s).")
-//     }
-
-// }
+function checkSeatAmount() {
+    let amountOfTickets = localStorage.getItem("amountOfTickets");
+    if(amountOfTickets == seats.length) {
+        document.getElementById("checkout_button").setAttribute("href", "./checkout.html");
+    }
+    else if (amountOfTickets > seats.length) {
+        let newText = document.getElementById("wrong_amount");
+        newText.innerHTML = "Please Choose " + (amountOfTickets - seats.length) + " More Ticket(s)."
+        newText.style.color = "red";
+    }
+    else if (amountOfTickets < seats.length) {
+        let newText = document.getElementById("wrong_amount");
+        newText.innerHTML = "Please Choose " + (seats.length - amountOfTickets) + " Less Ticket(s)."
+        newText.style.color = "red";
+    }
+}
 
