@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ticket Direct</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="icon" href="ticket.ico">
+</head>
+
+<body>
+    <!-- navigation bar throughout the entire program -->
+    <nav>
+        <ul id="company">
+            <li><i class="fas fa-ticket-alt"></i></li>
+            <li><a href="./index.html" id="company_name">Ticket Direct</a></li>
+        </ul>
+        <label for="toggle"><i class="fas fa-bars" id="hamburger_menu"></i></label>
+        <input type="checkbox" id="toggle">
+        <ul id="menu">
+            <li><a href="./index.html" class="nav_links">Home</a></li>
+            <li><a href="./movies.html" class="nav_links">Movies</a></li>
+            <li><a href="./theaters.html" class="nav_links">Theaters</a></li>
+            <li><a href="./signin.html" class="nav_links" onclick="signOut()">Sign In</a></li>
+            <li><a href="./signup.html" class="nav_links">Sign Up</a></li>
+
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h1>Checkout</h1>
+        <hr>
+        <div id="center_display">
+            <div id="movie_choice_display">
+                <img id="selected_movie" src="">
+                <div id="user_selection">
+                    <h2>Your Movie Info</h2>
+                    <p id="selected_theater"></p>
+                    <p><span id="selected_date"></span> @ <span id="selected_time"></span></p>
+                    <p>Your Seats: <span id="selected_seats"></span></p>
+                </div>
+            </div>
+        </div>
+        <div id="checkout_display">
+            <div id="purchase_display">
+                <h2>Ticket Purchase</h2>
+                <p>Adult: <span id="adult_amount" class="ticket_type"></span> X $<span class="price"></span> = $<span
+                        class="subtotal">0.00</span></p>
+                <p>Child: <span id="child_amount" class="ticket_type"></span> X $<span class="price"></span> = $<span
+                        class="subtotal">0.00</span></p>
+                <p>Senior: <span id="senior_amount" class="ticket_type"></span> X $<span class="price"></span> = $<span
+                        class="subtotal">0.00</span></p>
+                <p id="subtotal_display">Subtotal: $<span id="subtotal"></span></p>
+                <p>Fees: <span id="total_amount"></span> X $<span id="fee"></span> = $<span id="total_fees"></span></p>
+                <p id="total_display">Total: $<span id="total"></span></p>
+            </div>
+            <div id="payment_display">
+                <h2>Payment</h2>
+                <div id="card_payment_display">
+                    <div class="payment_selection">
+                        <div class="payment_option">
+                            <input type="radio" name="payment" id="">
+                            <p>Credit or Debit Card</p>
+                        </div>
+                        <div>
+                            <i class="fab fa-cc-visa fa-2x"></i>
+                            <i class="fab fa-cc-amex fa-2x"></i>
+                            <i class="fab fa-cc-mastercard fa-2x"></i>
+                            <i class="fab fa-cc-discover fa-2x"></i>
+                        </div>
+                    </div>
+
+                    <label for="card_number">Card Number</label>
+                    <input type="text" name="cardNum" id="card_number">
+                    <label>Expiration Date</label>
+                    <div class="card_info_display">
+                        <select name="" id="">
+                            <option value="0" selected hidden disabled>Month</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <select name="" id="">
+                            <option value="0" selected hidden disabled>Year</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                        </select>
+                    </div>
+                    <div class="card_info_display">
+                        <div class="users_name">
+                            <label for="first_name">First Name</label>
+                            <input type="text" name="firstName" id="first_name">
+                        </div>
+                        <div class="users_name">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" name="lastName" id="last_name">
+                        </div>
+                    </div>
+                    <label for="billing_zip">Billing Zip Code</label>
+                    <input type="text" name="billingZip" id="billing_zip">
+                </div>
+                <p>Use Another Payment Method</p>
+                <div id="paypal_payment_display">
+                    <div class="payment_option">
+                        <input type="radio" name="payment" id="">
+                        <i class="fab fa-paypal fa-2x"></i>
+                        <p>Pay With PayPal</p>
+                    </div>
+                </div>
+                <div id="rewards_payment_display">
+                    <div class="payment_option">
+                        <input type="radio" name="" id="">
+                        <i class="fas fa-ticket-alt fa-2x"></i>
+                        <p>Pay With Rewards Points</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a class="next_button" href="./seat.html">&laquo; Back to Seat Selection</a>
+        <a class="next_button">Complete Your Purchase</a>
+    </div>
+    </div>
+    <script src="ticket.js"></script>
+    <script src="movie.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script>
+        getPoster("selected_movie");
+        displayPrice();
+        setEachSubtotal("adult", localStorage.getItem("adultAmount"));
+        setEachSubtotal("child", localStorage.getItem("childAmount"));
+        setEachSubtotal("senior", localStorage.getItem("seniorAmount"));
+        getTotalFees(localStorage.getItem("amountOfTickets"));
+        getTotalPurchase()
+        document.getElementById("selected_theater").innerHTML = localStorage.getItem("theater");
+        document.getElementById("selected_time").innerHTML = localStorage.getItem("movieTime");
+        document.getElementById("selected_date").innerHTML = localStorage.getItem("movieDate");
+        document.getElementById("selected_seats").innerHTML = localStorage.getItem("selectedSeats");
+        document.getElementById("adult_amount").innerHTML = localStorage.getItem("adultAmount");
+        document.getElementById("child_amount").innerHTML = localStorage.getItem("childAmount");
+        document.getElementById("senior_amount").innerHTML = localStorage.getItem("seniorAmount");
+        document.getElementById("subtotal").innerHTML = localStorage.getItem("subtotal");
+        document.getElementById("total_amount").innerHTML = localStorage.getItem("amountOfTickets");
+
+    </script>
+</body>
+
+</html>
