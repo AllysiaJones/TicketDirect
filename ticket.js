@@ -11,10 +11,11 @@ let seniorTicket = new TicketInfo("senior", 8.55);
 
 const ticketTypes = [adultTicket, childTicket, seniorTicket];
 
-function setPrice() {
-    let tickets = document.getElementsByClassName("ticket_amount");
+let feeAmount = 1.50;
+
+function displayPrice() {
     let prices = document.getElementsByClassName("price");
-    for (let i = 0; i < tickets.length; i++) {
+    for (let i = 0; i < prices.length; i++) {
         prices[i].innerHTML = ticketTypes[i].price;
     }
 }
@@ -23,15 +24,15 @@ function getTicketAmount(ticketType) {
     let tickets = document.getElementsByClassName("ticket_amount");
     let ticketChoice = tickets[getTicketType(ticketType)];
     let ticketAmount = ticketChoice.options[ticketChoice.selectedIndex].value;
-    let subtotal = setSubtotal(ticketType, ticketAmount);
+    setEachSubtotal(ticketType, ticketAmount);
 }
 
-function setSubtotal(ticketType, ticketAmount) {
+function setEachSubtotal(ticketType, ticketAmount) {
+    let subtotalText = document.getElementsByClassName("subtotal");
     for (let i = 0; i < ticketTypes.length; i++) {
+        let subtotal = parseInt(ticketAmount) * parseFloat(ticketTypes[i].price);
         if (ticketType == ticketTypes[i].type) {
-            let subtotal = parseInt(ticketAmount) * parseFloat(ticketTypes[i].price);
             ticketTypes[i].subtotal = (parseFloat(ticketTypes[i].price) * parseInt(ticketTypes[i].amount)).toFixed(2);
-            let subtotalText = document.getElementsByClassName("subtotal");
             subtotalText[i].innerHTML = subtotal.toFixed(2);
         }
     }
@@ -66,6 +67,7 @@ function getSubtotal() {
     let subtotal = 0;
     for (let i = 0; i < ticketTypes.length; i++) {
         ticketTypes[i].subtotal = (parseFloat(ticketTypes[i].price) * parseInt(ticketTypes[i].amount)).toFixed(2);
+        // localStorage.setItem(ticketTypes[i].type + "_amount", )
         subtotal += parseFloat(ticketTypes[i].subtotal);
     }
     localStorage.setItem("subtotal", subtotal.toFixed(2));
@@ -74,7 +76,18 @@ function getSubtotal() {
 function getTotalAmount() {
     let total = 0;
     for (let i = 0; i < ticketTypes.length; i++) {
+        localStorage.setItem(ticketTypes[i].type + "Amount", ticketTypes[i].amount);
         total += ticketTypes[i].amount;
     }
     localStorage.setItem("amountOfTickets", total);
+}
+
+function getTotalFees(totalAmount) {
+    document.getElementById("fee").innerHTML = feeAmount.toFixed(2);
+    document.getElementById("total_fees").innerHTML = (feeAmount * parseInt(totalAmount)).toFixed(2);
+    localStorage.setItem("totalFees", (feeAmount * parseInt(totalAmount)).toFixed(2))
+}
+
+function getTotalPurchase() {
+    document.getElementById("total").innerHTML = (parseFloat(localStorage.getItem("subtotal")) + parseFloat(localStorage.getItem("totalFees"))).toFixed(2);
 }
