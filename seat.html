@@ -39,7 +39,7 @@
         <div id="theater_format">
             <div id="theater_seats">
                 <h2 id="front_theater">Front of the Theater</h2>
-                <p>Choose <span id="selected_amount">x</span> Seat(s):</p>
+                <p id="wrong_amount">Choose <span id="selected_amount">x</span> Seat(s):</p>
                 <div id="seat_arrangement">
                     <div class="row">
                         <button class="seat" id="A01" onclick="toggleSeat(this.id)"></button>
@@ -138,7 +138,6 @@
     <script src="seat.js"></script>
     <script>
         getPoster("selected_movie");
-        setPrice();
         document.getElementById("selected_theater").innerHTML = localStorage.getItem("theater");
         document.getElementById("selected_time").innerHTML = localStorage.getItem("movieTime");
         document.getElementById("selected_date").innerHTML = localStorage.getItem("movieDate");
