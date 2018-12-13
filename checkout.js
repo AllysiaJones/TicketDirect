@@ -1,3 +1,9 @@
+/**
+ * displayPayment function.
+ * gets the type of payment that the user selected 
+ * displays the info that corresponds with the payment type
+ * @param {string} paymentId 
+ */
 function displayPayment(paymentId) {
     if (paymentId == "card_option") {
         let ccInfo = document.getElementById("cc_info");
@@ -24,18 +30,32 @@ function displayPayment(paymentId) {
     }
 }
 
+/**
+ * paypalPayment function.
+ * opens the paypal sign in website on a new tab
+ * alerts the user that the payment went through
+ * calls paymentSelected
+ */
 function paypalPayment() {
     window.open("https://www.paypal.com/us/signin")
     alert("PayPal Payment Received!");
     paymentSelected();
 }
 
+/**
+ * rewardsPayment function.
+ * alerts the user that the payment went through
+ * calls paymentSelected
+ */
 function rewardsPayment() {
     alert("Rewards Points Payment Successful!")
     paymentSelected()
 }
 
-
+/**
+ * paymentSelected function.
+ * once a payment type is chosen by the user, disable the radio buttons
+ */
 function paymentSelected() {
     let options = document.getElementsByClassName("radio_buttons");
     for (let i = 0; i < options.length; i++) {
@@ -43,6 +63,13 @@ function paymentSelected() {
     }
 }
 
+/**
+ * completePurchase function.
+ * checks if user selected a payment type and completed the form if type is credit card
+ * calls successfulPayment if user correctly selected a payment
+ * if not, informs user that no payment has been selected
+ * @param {*} checkoutButton 
+ */
 function completePurchase(checkoutButton) {
     let options = document.getElementsByClassName("radio_buttons");
     let selectedPayment = false;
@@ -52,7 +79,6 @@ function completePurchase(checkoutButton) {
             selectedIndex = i;
             selectedPayment = true;
         }
-
     }
     if (selectedPayment) {
         if (selectedIndex == 0) {
@@ -71,6 +97,13 @@ function completePurchase(checkoutButton) {
     }
 }
 
+/**
+ * validateCardInfo function.
+ * if card payment is selected, checks if card form info is completed correctly
+ * alerts user which information is missing or incorrect
+ * @return {boolean} true: if information was entered correctly
+ * @return {boolean} false: if information was not entered correctly
+ */
 function validateCardInfo() {
     let missingInfo = "Missing Information:\n";
     let missing = false;
@@ -79,13 +112,13 @@ function validateCardInfo() {
         missing = true;
     }
     let ccMonth = document.getElementById("cc_month");
-    if(ccMonth.options[ccMonth.selectedIndex].value == 0) {
+    if (ccMonth.options[ccMonth.selectedIndex].value == 0) {
         missingInfo += "No Expiration Month Entered\n";
         missing = true;
 
     }
     let ccYear = document.getElementById("cc_year");
-    if(ccYear.options[ccYear.selectedIndex].value == 0) {
+    if (ccYear.options[ccYear.selectedIndex].value == 0) {
         missingInfo += "No Expiration Year Entered\n"
         missing = true;
     }
@@ -100,7 +133,7 @@ function validateCardInfo() {
     if (document.getElementById("billing_zip").value.length != 5) {
         missingInfo += "Invalid Zip Code";
         missing = true;
-    } 
+    }
     if (missing) {
         alert(missingInfo);
         return false;
@@ -110,6 +143,13 @@ function validateCardInfo() {
     }
 }
 
+/**
+ * successfulPayment function.
+ * when the user is signed in, go to signup.html page and show their account info
+ * when the user is not signed in, alert user of completed purchase and go to index.html
+ * when the user is signed in and chooses the card or paypal payments, add rewards
+ * @param {int} selectedIndex index of selected payment
+ */
 function successfulPayment(selectedIndex) {
     if (localStorage.getItem("signedIn") == "true") {
         if (selectedIndex != 2) {
