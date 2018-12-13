@@ -377,7 +377,7 @@ h2 {
     justify-content: center;
     margin-bottom: 10px;
 }
-.no_tickets_selected {
+.incorrect_input {
     text-align: center;
     color: red;
 }
