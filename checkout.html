@@ -16,7 +16,6 @@
 </head>
 
 <body>
-    <!-- navigation bar throughout the entire program -->
     <nav>
         <ul id="company">
             <li><i class="fas fa-ticket-alt"></i></li>
@@ -27,7 +26,6 @@
         <ul id="menu">
             <li><a href="./index.html" class="nav_links">Home</a></li>
             <li><a href="./movies.html" class="nav_links">Movies</a></li>
-            <li><a href="./theaters.html" class="nav_links">Theaters</a></li>
             <li><a href="./signin.html" class="nav_links" onclick="signOut()">Sign In</a></li>
             <li><a href="./signup.html" class="nav_links">Sign Up</a></li>
 
@@ -63,10 +61,10 @@
             </div>
             <div id="payment_display">
                 <h2>Payment</h2>
-                <div id="card_payment_display">
+                <div class="card_payment_display">
                     <div class="payment_selection">
                         <div class="payment_option">
-                            <input type="radio" name="payment" id="">
+                            <input type="radio" name="payment" id="card_option" class="radio_buttons" onclick="displayPayment(this.id)">
                             <p>Credit or Debit Card</p>
                         </div>
                         <div>
@@ -76,90 +74,96 @@
                             <i class="fab fa-cc-discover fa-2x"></i>
                         </div>
                     </div>
+                    <div id="cc_info" class="hidden">
+                        <label for="card_number">Card Number</label>
+                        <input type="text" name="cardNum" id="card_number" requiredclass="required">
+                        <label>Expiration Date</label>
+                        <div class="card_info_display">
+                            <select name="" id="cc_month">
+                                <option value="0" selected hidden disabled>Month</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select name="" id="cc_year">
+                                <option value="0" selected hidden disabled>Year</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                            </select>
+                        </div>
+                        <div class="card_info_display">
+                            <div class="users_name">
+                                <label for="first_name">First Name</label>
+                                <input type="text" name="firstName" id="first_name" class="required">
+                            </div>
+                            <div class="users_name">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" name="lastName" id="last_name" class="required">
+                            </div>
+                        </div>
+                        <label for="billing_zip">Billing Zip Code</label>
+                        <input type="text" name="billingZip" id="billing_zip" class="required">
+                    </div>
 
-                    <label for="card_number">Card Number</label>
-                    <input type="text" name="cardNum" id="card_number">
-                    <label>Expiration Date</label>
-                    <div class="card_info_display">
-                        <select name="" id="">
-                            <option value="0" selected hidden disabled>Month</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                        <select name="" id="">
-                            <option value="0" selected hidden disabled>Year</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                            <option value="26">26</option>
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                        </select>
-                    </div>
-                    <div class="card_info_display">
-                        <div class="users_name">
-                            <label for="first_name">First Name</label>
-                            <input type="text" name="firstName" id="first_name">
-                        </div>
-                        <div class="users_name">
-                            <label for="last_name">Last Name</label>
-                            <input type="text" name="lastName" id="last_name">
-                        </div>
-                    </div>
-                    <label for="billing_zip">Billing Zip Code</label>
-                    <input type="text" name="billingZip" id="billing_zip">
                 </div>
-                <p>Use Another Payment Method</p>
+                <h2>Use Another Payment Method</h2>
                 <div id="paypal_payment_display">
                     <div class="payment_option">
-                        <input type="radio" name="payment" id="">
-                        <i class="fab fa-paypal fa-2x"></i>
-                        <p>Pay With PayPal</p>
+                        <input type="radio" name="payment" id="paypal_option" class="radio_buttons" onclick="displayPayment(this.id)">
+                        <i class="fab fa-paypal fa-2x payment_icon"></i>
+                        <p class="payment_type">Pay With PayPal</p>
+                        <a id="paypal_button" class="next_button hidden" onclick="paypalPayment()">Continue With PayPal</a>
                     </div>
                 </div>
                 <div id="rewards_payment_display">
                     <div class="payment_option">
-                        <input type="radio" name="" id="">
-                        <i class="fas fa-ticket-alt fa-2x"></i>
+                        <input type="radio" name="payment" id="rewards_option" class="radio_buttons" onclick="displayPayment(this.id)">
+                        <i class="fas fa-ticket-alt fa-2x payment_icon"></i>
                         <p>Pay With Rewards Points</p>
+                        <a id="rewards_button" class="next_button hidden" onclick="rewardsPayment()">Use <span id="rewards_points"></span>
+                            Points</a>
                     </div>
                 </div>
-
+                <p id="no_payment" class="incorrect_input"></p>
             </div>
         </div>
     </div>
-
     <div class="buttons">
         <a class="next_button" href="./seat.html">&laquo; Back to Seat Selection</a>
-        <a class="next_button">Complete Your Purchase</a>
+        <a class="next_button" id="checkout_button" onclick="completePurchase(this.id)">Complete Your Purchase</a>
     </div>
     </div>
     <script src="ticket.js"></script>
     <script src="movie.js"></script>
-    <!-- <script src="main.js"></script> -->
+    <script src="checkout.js"></script>
+    <script src="main.js"></script>
     <script>
+        accountStatus();
         getPoster("selected_movie");
         displayPrice();
-        setEachSubtotal("adult", localStorage.getItem("adultAmount"));
-        setEachSubtotal("child", localStorage.getItem("childAmount"));
-        setEachSubtotal("senior", localStorage.getItem("seniorAmount"));
+        setSubtotal("adult", localStorage.getItem("adultAmount"));
+        setSubtotal("child", localStorage.getItem("childAmount"));
+        setSubtotal("senior", localStorage.getItem("seniorAmount"));
         getTotalFees(localStorage.getItem("amountOfTickets"));
-        getTotalPurchase()
+        getTotalPurchase();
         document.getElementById("selected_theater").innerHTML = localStorage.getItem("theater");
         document.getElementById("selected_time").innerHTML = localStorage.getItem("movieTime");
         document.getElementById("selected_date").innerHTML = localStorage.getItem("movieDate");
@@ -169,7 +173,7 @@
         document.getElementById("senior_amount").innerHTML = localStorage.getItem("seniorAmount");
         document.getElementById("subtotal").innerHTML = localStorage.getItem("subtotal");
         document.getElementById("total_amount").innerHTML = localStorage.getItem("amountOfTickets");
-
+        document.getElementById("rewards_points").innerHTML = (parseInt(localStorage.getItem("totalPurchase")) * 5);
     </script>
 </body>
 
