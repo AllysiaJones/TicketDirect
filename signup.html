@@ -16,7 +16,6 @@
 </head>
 
 <body>
-    <!-- navigation bar throughout the entire program -->
     <nav>
         <ul id="company">
             <li><i class="fas fa-ticket-alt"></i></li>
@@ -27,30 +26,69 @@
         <ul id="menu">
             <li><a href="./index.html" class="nav_links">Home</a></li>
             <li><a href="./movies.html" class="nav_links">Movies</a></li>
-            <li><a href="./theaters.html" class="nav_links">Theaters</a></li>
-            <li><a href="./signin.html" class="nav_links">Sign In</a></li>
+            <li><a href="./signin.html" class="nav_links" onclick="signOut()">Sign In</a></li>
             <li><a href="./signup.html" class="nav_links" id="selected_page">Sign Up</a></li>
         </ul>
     </nav>
 
     <div id="container">
-        <h1>Join Ticket Direct's Rewards Program!</h1>
-        <hr>
-        <div id="sign_up_form">
-            <h2>Ticket Direct Rewards</h2>
-            <form action="">
-                <input type="email" placeholder="Email" id="form_email" name="email" required>
-                <div id="password_info">
-                    <input type="password" placeholder="Password" id="form_password" name="password" required>
-                    <span id="password_option1" onclick="showPassword()">Show</span>
-                    <input type="password" placeholder="Confirm Password" id="form_confirm_password" name="confirmPassword" required>
-                    <span id="password_option2" onclick="showPassword()">Show</span>
+        <!-- sign up form when user needs to sign in -->
+        <div id="sign_in_page">
+            <h1 id="sign_up_header">Join Ticket Direct's Rewards Program!</h1>
+            <hr>
+            <div class="account_form " id="sign_up_form">
+                <div class="form_header">
+                    <h2 class="form_label">Ticket Direct Rewards</h2>
                 </div>
-                <button id="form_button">Sign Up</button>
-            </form>
+                <form action="" onsubmit="return signIn()" method="POST">
+                    <input type="email" placeholder="Email" class="form_email" id="forgot_password_email" name="email"
+                        required>
+                    <div id="password_info">
+                        <input type="password" placeholder="Password" class="form_password" id="password1" name="password"
+                            required>
+                        <input type="password" placeholder="Confirm Password" class="form_password" id="password2" name="confirmPassword"
+                            onkeyup="checkPasswords()" required>
+                        <span id="password_message" class="form_message"></span>
+                    </div>
+                    <button class="form_button" id="sign_up_button">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        <!-- my account display when user is signed in -->
+        <div id="my_account_page" class="hidden">
+            <h1>Your Ticket Direct Account</h1>
+            <hr>
+            <h2>Rewards Points: <span id="rewards"></span></h2>
+            <div id="center_display">
+                <div id="movie_choice_display">
+                    <img id="selected_movie" src="">
+                    <div id="user_selection">
+                        <h2>Your Movie Info</h2>
+                        <p id="selected_theater"></p>
+                        <p><span id="selected_date"></span> @ <span id="selected_time"></span></p>
+                        <p>Your Seats: <span id="selected_seats"></span></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
+    <script src="movie.js"></script>
+    <script src="seat.js"></script>
+    <script src="checkout.js"></script>
+    <script>
+        accountStatus();
+        getPoster("selected_movie");
+        document.getElementById("selected_theater").innerHTML = localStorage.getItem("theater");
+        document.getElementById("selected_time").innerHTML = localStorage.getItem("movieTime");
+        document.getElementById("selected_date").innerHTML = localStorage.getItem("movieDate");
+        document.getElementById("selected_seats").innerHTML = localStorage.getItem("selectedSeats");
+        if (localStorage.getItem("signedIn") == "true") {
+            document.getElementById("my_account_page").classList.remove("hidden");
+            document.getElementById("sign_in_page").classList.add("hidden");
+            document.getElementById("rewards").innerHTML = localStorage.getItem("rewards");
+        }
+    </script>
 </body>
 
 </html>
