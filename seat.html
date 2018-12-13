@@ -16,7 +16,6 @@
 </head>
 
 <body>
-    <!-- navigation bar throughout the entire program -->
     <nav>
         <ul id="company">
             <li><i class="fas fa-ticket-alt"></i></li>
@@ -27,8 +26,7 @@
         <ul id="menu">
             <li><a href="./index.html" class="nav_links">Home</a></li>
             <li><a href="./movies.html" class="nav_links">Movies</a></li>
-            <li><a href="./theaters.html" class="nav_links">Theaters</a></li>
-            <li><a href="./signin.html" class="nav_links">Sign In</a></li>
+            <li><a href="./signin.html" class="nav_links" onclick="signOut()">Sign In</a></li>
             <li><a href="./signup.html" class="nav_links">Sign Up</a></li>
         </ul>
     </nav>
@@ -126,7 +124,6 @@
                 </div>
             </div>
         </div>
-
         <div class="buttons">
             <a class="next_button" href="./ticket.html">&laquo; Back to Ticket Selection</a>
             <a class="next_button" id="checkout_button" onclick="checkSeatAmount()">Checkout
@@ -136,7 +133,9 @@
     <script src="ticket.js"></script>
     <script src="movie.js"></script>
     <script src="seat.js"></script>
+    <script src="main.js"></script>
     <script>
+        accountStatus()
         getPoster("selected_movie");
         document.getElementById("selected_theater").innerHTML = localStorage.getItem("theater");
         document.getElementById("selected_time").innerHTML = localStorage.getItem("movieTime");
