@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
 }
-
 nav {
     font-family: 'Cinzel', serif;
     background-color: #1F2328;
@@ -13,7 +12,6 @@ nav {
     width: 100%;
     top: 0;
 } 
-
 #company, #menu {
     list-style-type: none;
 }
@@ -31,31 +29,25 @@ nav {
     text-decoration: none;
     color: #f9c72f;
 }
-
 #selected_page {
     border-bottom: solid #f9c72f 2px;
 }
-
 #menu a:hover {
     border-bottom: solid #f9c72f 2px;
     transition-duration: 300ms;
 }
-
 #toggle {
     display: none;
 }
-
 #container {
     margin: 0 auto;
     font-family: 'Oswald', sans-serif;
 }
-
 h1 {
     text-align: center;
     margin: 20px 0;
     font-family: 'Oswald', sans-serif;
 }
-
 hr {
     border: 0;
     height: 2px;
@@ -64,12 +56,10 @@ hr {
     width: 80%;
     margin: 0 auto;
 }
-
 h2 {
     margin: 10px auto 5px auto;
     text-align: center;
 }
-
 /* styling for home page and movie page */
 #movie_list {
     display: flex;
@@ -78,7 +68,6 @@ h2 {
     margin: 20px auto;
     justify-content: center;
 }
-
 .movie {
     text-decoration: none;
     text-align: center;
@@ -87,22 +76,18 @@ h2 {
     color: #1F2328;
     font-size: 18px;
 }
-
 .movie img{
     height: 220px;
     width: 150px;
     border: solid #1F2328 3px;
 }
-
 .movie span {
     display: block;
 }
-
 .movie:hover {
     text-decoration: underline;
     transition-duration: 1000ms;
 }
-
 /* styling for movieinfo page */
 #movie_info {
     display: flex;
@@ -112,39 +97,39 @@ h2 {
     margin: 0 auto;
     font-size: 20px;
 }
-
 #movie_description{
     width: 560px;
     margin: 20px 0;
     font-size: 19px;
 }
-
 #movie_page_header {
     margin-bottom: 20px;
 }
-
 #movie_poster {
     height: 499px;
     width: auto;
     margin-right: 20px;
 }
-
 #movie_release_date {
     font-weight: 600;
 }
-
-/* styling for theater page/dropdown */
 #theater_options {
     display: flex;
     flex-direction: column;
     margin: 0 auto 120px auto;
-    width: 250px;
+    width: 305px;
 }
-
-#theater_options input {
-    margin-bottom: 20px;
+#theater, .theater_choices {
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 4px;
 }
-
+#theater {
+    background: #ffd24c;
+}
+.theater_choices {
+    background: #ccc;
+}
 #calendar {
     display: flex;
     justify-content: center;
@@ -152,26 +137,28 @@ h2 {
 }
 .day {
     border: solid 2px #1F2328;
-    width: 100px;
-    height: 120px;
+    background: #ccc;
     margin: 5px;
     text-align: center;
     text-decoration: none;
     color: #1F2328;
     font-size: 20px;
 }
-
+.day:hover {
+    cursor: pointer;
+}
 .weekday {
-    margin: 8px 0;
-    padding-bottom: 8px;
+    padding: 8px;
     border-bottom: #1F2328 solid 2px;
 }
-
-.date {
-    font-size: 30px;
-    /* font-weight: 600; */
+.selected_day {
+    color: #ccc;
+    background: #1F2328;
 }
-
+.date {
+    padding: 10px;
+    font-size: 30px;
+}
 #left_arrow {
     visibility: hidden;
 }
@@ -180,23 +167,25 @@ h2 {
     color: #1F2328;
     margin: auto 5px;
 }
-
-#movie_display {
+.movie_display {
     display: flex;
     justify-content: center;
     margin: 0 auto 50px auto;
 }
+.hidden {
+    display: none;
+}
 
 #movie_format {
-    height: 300px;
+    height: 314px;
 }
+
 #movie_selection {
     height: 98%;
     width: auto;
     border: #1F2328 solid 3px;
     border-right: none;
 }
-
 #theater_info {
     border: #1F2328 solid 3px;
     height: auto;
@@ -207,7 +196,6 @@ h2 {
     align-items: center;
     font-family: 'Oswald', sans-serif;
 }
-
 #theater_name {
     margin: 0;
     padding: 10px 0;
@@ -216,7 +204,6 @@ h2 {
     color: #ccc;
     letter-spacing: 2px;
 }
-
 #theater_times {
     display: flex;
     flex-direction: row;
@@ -224,8 +211,6 @@ h2 {
     padding-top: 10px;
     justify-content: center;
 }
-
-
 .movie_times {
     padding: 8px;
     margin: 5px;
@@ -235,15 +220,25 @@ h2 {
     color: #1F2328;
     border-radius: 4px;
     border: #f7bb08 solid 2px;
+    font-family: 'Oswald', sans-serif;
 }
-
+.time_disabled, .time_disabled:hover {
+    padding: 8px;
+    margin: 5px;
+    width: 110px;
+    font-size: 20px;
+    background: #333;
+    color: #1F2328;
+    border-radius: 4px;
+    border: #1F2328 solid 2px;
+    font-family: 'Oswald', sans-serif;
+}
 .movie_times:hover, .movie_times:focus {
     cursor: pointer;
     background: #ffd24c;
     border-color: #f9c72f;
     outline: 0;
 }
-
 .next_button {
     padding: 8px;
     margin: 5px;
@@ -254,18 +249,15 @@ h2 {
     border: #ccc solid 2px;
     text-decoration: none;
 }
-
 .next_button:hover, .next_button:focus {
     cursor: pointer;
     background: #333;
     outline: 0;
 }
-
 /* styling for sign-in form and page */
 .blur {
     filter: blur(3px);
 }
-
 .account_form {
     border: 3px solid #1F2328;
     background: rgb(167, 167, 167);
@@ -281,11 +273,9 @@ h2 {
     margin-top: -140px;
     margin-left: -150px; 
 }
-
 #forgot_password_form {
     display: none;
 }
-
 .form_message {
     display: block;
     font-size: 20px;
@@ -295,38 +285,30 @@ h2 {
     display: flex;
     flex-direction: column;
 }
-
 .form_header h2 {
    margin: -10px 0 0 0;
-    /* padding-left: 15%; */
 }
-
+.form_label {
+    padding-top: 30px;
+}
 .exit {
-    /* display: inline; */
     margin-top: -2px;
     margin-left: 88%;
     color: #1F2328;
     font-size: 35px;
     cursor: pointer;
 }
-
 .account_form form, .account_form form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .form_email, .form_password {
     width: 180px;
     margin-top: 10px;
     font-size: 20px;
     padding: 10px 5px;
 }
-
-/* #sign_up_form #form_email, #sign_up_form #form_password, #sign_up_form #form_confirm_password {
-    font-size: 15px;
-} */
-
 .form_button {
     font-family: 'Oswald', sans-serif;
     font-size: 25px;
@@ -335,24 +317,20 @@ h2 {
     background-color: #f9c72f;
     cursor: pointer;
 }
-
 #forgot_password_button:disabled {
     cursor: initial;
 }
-
 .account_form .link {
     text-decoration: none;
     color:rgb(60, 60, 253);
 }
-
 .account_form .link:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 .password_info {
     position: relative;
-
 }
-
 .password_option {
     position: absolute;
     margin-top: -35px;
@@ -361,34 +339,28 @@ h2 {
     font-size: 15px;
     cursor: pointer;
 }
-
 /* styling for ticket.html */
 #ticket_format {
     display: flex;
     justify-content: center;
     margin: 30px auto;
 }
-
 .type_selection {
     display: flex;
     margin: 10px 0;
     justify-content: center;
 }
-
 .type {
     width: 70px;
     text-align: right;
 }
-
 #ticket_selection {
     vertical-align: middle;
 }
-
 #ticket_selection p {
     margin: 0 10px;
     font-size: 20px;
 }
-
 #ticket_amount {
     font-family: 'Oswald', sans-serif;
 }
@@ -396,40 +368,38 @@ h2 {
     display: inline-block;
     width: 40px;
 }
-
 .subtotal {
     display: inline-block;
     width: 52px;
 }
-
 .buttons {
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
-
+.no_tickets_selected {
+    text-align: center;
+    color: red;
+}
 #movie_choice_display {
     display: flex;
     height: 206px;
     background: #ccc;
 }
-
 #selected_movie {
     height: 200px;
     width: auto;
     border: solid #1F2328 3px;
     border-right: none;
 }
-
 #user_selection {
     width: 300px;
     border: solid #1F2328 3px;
 }
-
 #user_selection h2 {
     border-bottom: #1F2328 solid 2px;
     padding-bottom: 10px;
 }
-
 #user_selection p{
     padding-left: 10px;
     font-size: 18px;
@@ -439,12 +409,10 @@ h2 {
     display: flex;
     flex-direction: column;
 }
-
 .row {
     display: flex;
     justify-content: center;
 }
-
 .seat {
     background-color: #f9c72f;
     background-size: cover;
@@ -453,7 +421,6 @@ h2 {
     margin: 10px;
     border: none;
 }
-
 .seat:hover, .seat:focus{
     background: #333;
     color: #ccc;
@@ -465,32 +432,26 @@ h2 {
 .seat:hover {
     background: #333 !important;
 }
-
 #theater_format {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 30px auto;
 }
-
 #theater_seats {
     margin-right: 15px;
 }
-
 #theater_seats p{
     text-align: center;
     font-size: 20px;
 }
-
 #front_theater {
     margin-top: 0px;
 }
-
 #checkout_button {
     width: 180px;
     text-align: center;
 }
-
 /* styling for checkout.html */
 #center_display {
     display: flex;
@@ -501,21 +462,19 @@ h2 {
 #checkout_display {
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
 }
-
 #purchase_display, #payment_display {
     display: flex;
     flex-direction: column;
     border: #333 solid 2px;
     background: #ccc;
-    padding: 0 10px;
+    padding: 0 10px 10px 10px;
 }
-
 #payment_display {
     width: 400px;
     margin-left: 10px;
 }
-
 .payment_selection {
     display: flex;
     justify-content: space-between;
@@ -531,82 +490,72 @@ h2 {
 #purchase_display p {
     text-align: right;
 }
-
+#payment_display input, #payment_display select {
+    font-size: 15px;
+    padding: 5px;
+}
+#payment_display label {
+    margin-top: 5px;
+}
 #subtotal_display, #total_display {
     margin-top: 5px;
     padding-top: 5px;
     border-top: #1F2328 solid 1px;
     font-weight: 600;
 }
-
 #total_display {
     padding-bottom: 5px;
     font-size: 80px;
 }
-
 #subtotal, #total_fees, #total {
     display: inline-block;
     width: 52px;
 }
-
-#card_payment_display {
+.card_payment_display {
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
     margin-bottom: 5px;
     border-bottom: #1F2328 solid 1px;
 }
-
-#card_payment_display input{
+.card_payment_display input{
     max-width: 160px;
 }
-
 .card_info_display {
     display: flex;
     justify-content: flex-start;
 }
 .card_info_display select {
-    width: 70px;
+    width: 80px;
 }
-
 .users_name {
     display: flex;
     flex-direction: column;
 }
-/* .ticket_type {
-    font-weight: 600;
-} */
-/* #purchase_display h2, #payment_display h2 {
-    text-align: left;
-    //fix margin
-} */
-
-/* destkop view */
+.payment_icon {
+    margin: 0 5px;
+}
+/* styling for only destkop view */
 @media only screen and (min-width: 1130px){
     body {
         padding-top: 80px;
     }
-    
     nav {
         display: flex;
         flex-direction: row;
         height: 80px;
     } 
-    
     #company {
         font-size: 40px;
         letter-spacing: 2px;
         margin-left: 15px;
     }
-    
     #company_name {
         margin-left: 10px;
     }
-    
     #hamburger_menu {
         display: none;
     }
-
     #menu {
         display: flex;
         flex-direction: row;
@@ -617,92 +566,136 @@ h2 {
         font-size: 20px;
         align-items: center;
     }
-    
     #menu li{
         margin-left: 30px;
     }
-
     #container {
         width: 80%;
     }
-
     /* styling for home page and movie page */
-#movie_list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    margin: 20px auto;
-    justify-content: center;
+    #movie_list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 20px auto;
+        justify-content: center;
+    }
+    .movie {
+        text-decoration: none;
+        text-align: center;
+        width: 150px;
+        margin: 10px;
+        color: #1F2328;
+        font-size: 18px;
+    }
+    .movie img{
+        height: 220px;
+        width: 150px;
+        border: solid #1F2328 3px;
+    }
+    .movie span {
+        display: block;
+    }
+    .movie:hover {
+        text-decoration: underline;
+        transition-duration: 1000ms;
+    }
+    /* styling for movieinfo page */
+    #movie_info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+    #movie_description{
+        width: 560px;
+        margin: 20px 0;
+        font-size: 19px;
+    }
+    #movie_page_header {
+        margin-bottom: 20px;
+    }
+    #movie_poster {
+        height: 499px;
+        width: auto;
+        margin-right: 20px;
+    }
+    #movie_release_date {
+        font-weight: 600;
+    }
 }
-
-.movie {
-    text-decoration: none;
-    text-align: center;
-    width: 150px;
-    margin: 10px;
-    color: #1F2328;
-    font-size: 18px;
+ /* styling for only mobile view */
+@media only screen and (max-width: 849px){
+    /* styling throughout the website */
+    .next_button {
+        font-size: 15px;
+    }
+    #movie_choice_display {
+        width: 350px;
+    }
+    /* styling for movieInfo page */
+    #calendar {
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    .day {
+        font-size: 15px;
+    }
+    .date {
+        font-size: 20px;
+    } 
+    #movie_format {
+        display: none;
+    }  
+    /* styling for ticket page */
+    #ticket_format {
+        flex-direction: column;
+        justify-content: center;
+        margin: 30px 0 10px 0;
+    }
+     /* styling for seat page */
+    .seat {
+        width: 25px;
+        height: 25px;
+        margin: 5px;
+    }
+    .seat:hover, .seat:focus{
+        font-size: 15px;
+    }
+    #checkout_button {
+        width: 150px;
+        font-size: 15px;
+    }
+    /* styling for checkout page */
+    #checkout_display {
+        flex-direction: column;
+    }
+    #purchase_display {
+        width: 220px;
+        margin: 0 auto;
+    }
+    #payment_display {
+        width: auto;
+        margin-top: 20px;
+    }
+    /* styling for signup page */
+    #sign_up_header {
+        font-size: 30px;
+    }
 }
-
-.movie img{
-    height: 220px;
-    width: 150px;
-    border: solid #1F2328 3px;
-}
-
-.movie span {
-    display: block;
-}
-
-.movie:hover {
-    text-decoration: underline;
-    transition-duration: 1000ms;
-}
-
-/* styling for movieinfo page */
-#movie_info {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 20px;
-}
-
-#movie_description{
-    width: 560px;
-    margin: 20px 0;
-    font-size: 19px;
-}
-
-#movie_page_header {
-    margin-bottom: 20px;
-}
-
-#movie_poster {
-    height: 499px;
-    width: auto;
-    margin-right: 20px;
-}
-
-#movie_release_date {
-    font-weight: 600;
-}
-}
-
-/* mobile and tablet view */
+/* styling for only mobile and tablet view */
 @media only screen and (max-width: 1129px){
     body {
         padding-top: 50px;
     }
-
     nav {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         padding: 5px 0;
     } 
-    
     #company {
         display: flex;
         flex-direction: row;
@@ -710,11 +703,9 @@ h2 {
         margin-left: 10px;
         flex: 2;
     }
-    
     #company_name {
         margin-left: 5px;
     }
-
     #hamburger_menu {
         font-size: 20px;
         padding-right: 10px;
@@ -725,19 +716,16 @@ h2 {
         max-height: 0;
         overflow: hidden;
     }
-
     #menu li{
         width: 100%;
         text-align: center;
         margin-bottom: 5px;
     }
-    
     #nav_toggle label{
         text-align: right;
         cursor: pointer;
         display: block;
     } 
-    
     #toggle:checked~ #menu {
         max-height: 100%;
         display: flex;
@@ -747,7 +735,6 @@ h2 {
         align-items: center;
         transition-duration: 500ms;
     }
-
     #container {
         width: 100%;
     }   
@@ -755,37 +742,33 @@ h2 {
     #movie_list {
         width: 90%;
     }
-
-
-
     /* styling for movieInfo page */
     #movie_info {
         text-align: center;
         font-size: 22px;
     }
-
     #movie_description {
         margin: 20px 15px;
         font-size: 19px;
         text-align: left;
         width: auto;
     } 
-
     #movie_trailer {
         width: 300px;
         height: auto;
     }
-
     #movie_page_header {
         margin-bottom: 20px;
     }
-
     #movie_poster {
     height: 300px;
     width: auto;
     }
-
-#movie_release_date {
-    font-weight: 600;
-}
+    #movie_release_date {
+        font-weight: 600;
+    }
+    /* styling for seat page */
+    #theater_format {
+        flex-direction: column-reverse;
+    }
 }
