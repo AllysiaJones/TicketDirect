@@ -27,13 +27,10 @@
         <ul id="menu">
             <li><a href="./index.html" class="nav_links" id="selected_page">Home</a></li>
             <li><a href="./movies.html" class="nav_links">Movies</a></li>
-            <li><a href="./theaters.html" class="nav_links">Theaters</a></li>
             <li><a href="./signin.html" class="nav_links" onclick="signOut()">Sign In</a></li>
             <li><a href="./signup.html" class="nav_links">Sign Up</a></li>
-
         </ul>
     </nav>
-
     <div id="container" class="blur">
         <h1>Welcome to Ticket Direct!</h1>
         <!-- movies currently in theaters -->
@@ -150,32 +147,34 @@
             </a>
         </div>
     </div>
-
+    <!-- sign in form displayed on top of homepage content -->
     <div class="account_form" id="sign_in_form">
         <div class="form_header">
-            <i class="fas fa-window-close exit" href="#" onclick="removeForm('sign_in_form')"></i>
+            <i class="fas fa-window-close exit" onclick="removeForm('sign_in_form')"></i>
             <h2>Ticket Direct Rewards</h2>
         </div>
-        <form action="">
+        <form action="" onsubmit="return signIn()" method="POST">
             <input type="email" placeholder="Email" class="form_email" name="email" required>
             <div class="password_info">
-                <input type="password" placeholder="Password" class="form_password" name="password" required>
+                <input type="password" placeholder="Password" class="form_password" name="password" id="password"
+                    required>
                 <span class="password_option" onclick="showPassword()">Show</span>
             </div>
-            <button class="form_button" onclick="confirmAccount()">Sign In</button>
+            <button class="form_button">Sign In</button>
         </form>
         <a class="link" onclick="forgotPassword()">Forgot your password?</a>
         <p>Don't have an account? <a href="./signup.html" class="link">Sign Up Here</a></p>
-        <a class="link">Continue as a Guest</a>
+        <a class="link" onclick="removeForm('sign_in_form')">Continue as a Guest</a>
     </div>
-
+    <!-- forgot your password form if user selectes that option -->
     <div class="account_form" id="forgot_password_form">
         <div class="form_header">
-            <i class="fas fa-window-close exit" href="#" onclick="removeForm('forgot_password_form')"></i>
+            <i class="fas fa-window-close exit" onclick="removeForm('forgot_password_form')"></i>
             <h2>Forgot Your Password?</h2>
         </div>
-        <form action="" onsubmit="return storeNewPassword()" method="POST">
-            <input type="email" placeholder="Email" class="form_email" id="forgot_password_email" name="email" onkeyup="checkEmail(this.id)"required>
+        <form action="">
+            <input type="email" placeholder="Email" class="form_email" id="forgot_password_email" name="email" onkeyup="checkEmail(this.id)"
+                required>
             <span id="email_message" class="form_message"></span>
             <div id="password_info">
                 <input type="password" placeholder="Password" class="form_password" id="password1" name="password"
@@ -189,6 +188,10 @@
     </div>
     <script src="account.js"></script>
     <script src="main.js"></script>
+    <script src="movie.js"></script>
+    <script>
+        accountStatus();
+    </script>
 </body>
 
 </html>
