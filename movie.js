@@ -161,7 +161,7 @@ for (let i = 0; i < movieList.length; i++) {
  * locally stores the selected movie from index.html or movies.html.
  * @param {string} movieTitle the selected movie by the user
  */
-function movieChoice (movieTitle) {
+function movieChoice(movieTitle) {
     localStorage.setItem("movie", movieTitle);
 }
 
@@ -194,7 +194,7 @@ function getPreSale(movieId) {
         }
     }
     return false;
-}   
+}
 
 /**
  * getPreSaleDate function.
