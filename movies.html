@@ -26,12 +26,10 @@
         <ul id="menu">
             <li><a href="./index.html" class="nav_links">Home</a></li>
             <li><a href="./movies.html" class="nav_links" id="selected_page">Movies</a></li>
-            <li><a href="./theaters.html" class="nav_links">Theaters</a></li>
-            <li><a href="./signin.html" class="nav_links">Sign In</a></li>
+            <li><a href="./signin.html" class="nav_links" onclick="signOut()">Sign In</a></li>
             <li><a href="./signup.html" class="nav_links">Sign Up</a></li>
         </ul>
     </nav>
-
     <div id="container">
         <!-- movies currently in theaters -->
         <h2>Now Playing</h2>
@@ -105,7 +103,6 @@
                 <p>Alice in Wonderland (2010)</p>
             </a>
         </div>
-
         <!-- movies for pre-sale -->
         <h2>Coming to Theaters</h2>
         <hr>
@@ -148,6 +145,10 @@
         </div>
     </div>
     <script src="main.js"></script>
+    <script src="movie.js"></script>
+    <script>
+        accountStatus();
+    </script>
 </body>
 
 </html>
