@@ -1,3 +1,16 @@
+/**
+ * Movie Parameterized Constructor.
+ * Creates a movie object for Ticket Direct's movies.
+ * @param {string} name 
+ * @param {int} date 
+ * @param {string} rating 
+ * @param {string} duration 
+ * @param {string} genre 
+ * @param {string} description 
+ * @param {string} poster poster file located within the Ticket Direct Folder
+ * @param {string} trailer embedded YouTube file of the movie's trailer
+ * @param {boolean} preSale 
+ */
 function Movie(name, date, rating, duration, genre, description, poster, trailer, preSale) {
     this.name = name;
     this.date = date;
@@ -143,6 +156,21 @@ for (let i = 0; i < movieList.length; i++) {
     }
 }
 
+/**
+ * movieChoice function.
+ * locally stores the selected movie from index.html or movies.html.
+ * @param {string} movieTitle the selected movie by the user
+ */
+function movieChoice (movieTitle) {
+    localStorage.setItem("movie", movieTitle);
+}
+
+/**
+ * getPoster function.
+ * goes through the list of movies to find the poster file of the selected movie
+ * adds the file to display the movie poster on the page
+ * @param {string} movieId the selected movie by the user
+ */
 function getPoster(movieId) {
     let movieSelection = document.getElementById(movieId);
     for (let i = 0; i < movieList.length; i++) {
@@ -152,3 +180,33 @@ function getPoster(movieId) {
     }
 }
 
+/**
+ * getPreSale function.
+ * goes through the list of movies to determine if the selected movie is a pre-sale movie or not
+ * @param {string} movieId the selected movie by the user
+ * @return {boolean} if movie is a pre-sale movie or not 
+ */
+function getPreSale(movieId) {
+    let movieSelection = document.getElementById(movieId);
+    for (let i = 0; i < movieList.length; i++) {
+        if (selected == movieList[i].name) {
+            return movieList[i].preSale;
+        }
+    }
+    return false;
+}   
+
+/**
+ * getPreSaleDate function.
+ * for those movies that are pre-sale, find its date
+ * @param {string} movieId the selected movie by the user
+ * @return {string} date property of the movie object
+ */
+function getPreSaleDate(movieId) {
+    let movieSelection = document.getElementById(movieId);
+    for (let i = 0; i < movieList.length; i++) {
+        if (selected == movieList[i].name & movieList[i].preSale) {
+            return movieList[i].date;
+        }
+    }
+}
