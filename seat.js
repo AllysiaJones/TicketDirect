@@ -60,7 +60,7 @@ function displaySeats() {
     let selectedSeats = "";
     seats = seats.sort();
     for (let i = 0; i < seats.length; i++) {
-        if (seats[i][1] == 0) {
+        if (seats[i][1] == "0") {
             selectedSeats += trimSeat(seats[i]);
         }
         else {
@@ -85,7 +85,11 @@ function displaySeats() {
  * @return {string} reformatted seat id
  */
 function trimSeat(seatId) {
-    return seatId[0] + seatId[2];
+    if(seatId[1] == 0){
+        return seatId[0] + seatId[2];
+    }
+    else    
+        return seatId;
 }
 
 /**
